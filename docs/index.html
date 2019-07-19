@@ -7,7 +7,7 @@
 <body>
 <script>
   $(document).ready(function() {
-    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=huluvu424242&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=50&format=json&callback=", function(json) {
+    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=huluvu424242&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=80&format=json&callback=", function(json) {
       var html = '';
       $.each(json.topartists.artist, function(i, item) {
         var imgurl = item.image[0]['#text'];
