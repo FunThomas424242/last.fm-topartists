@@ -10,7 +10,9 @@
     $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=huluvu424242&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=50&format=json&callback=", function(json) {
       var html = '';
       $.each(json.topartists.artist, function(i, item) {
-        html += "<p><img src="+item.image[0]['#text']+"><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+        var imgurl = item.image[0]['#text'];
+        //imgurl = imgurl.substring(imgurl.length-36,imgurl.length-3) + "webp";
+        html += "<p><img src="+imgurl+"><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
       });
       $('#result').append(html);
     });
